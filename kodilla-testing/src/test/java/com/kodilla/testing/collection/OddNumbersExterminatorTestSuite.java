@@ -22,11 +22,11 @@ public class OddNumbersExterminatorTestSuite {
 
     @Test
     public void testOddNumbersExterminatorEmptyList() {
-        //Given
-        List<Integer> emptyList = new ArrayList<Integer>();
-        //When
+        /* Given */
+        List<Integer> emptyList = new ArrayList<>();
+        /* When */
         List<Integer> exterminatedList = exterminator.exterminate(emptyList);
-        //Then
+        /* Then */
         Assert.assertEquals(0, exterminatedList.size());
     }
 
