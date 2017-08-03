@@ -6,7 +6,7 @@ public class ShapeCollectorTestSuite {
 
     private static int testCounter = 0;
 
-    ShapeCollector collector;
+    private ShapeCollector collector;
 
     @BeforeClass
     public static void beforeAllTests() {
@@ -61,16 +61,16 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testShowFigures() {
         //Given
-        Circle circle = new Circle(3);
+        Circle circle = new Circle(1);
         Square square = new Square(2);
         Triangle triangle = new Triangle(2,1);
         collector.addFigure(circle);
         collector.addFigure(square);
         collector.addFigure(triangle);
         //When
-
+        String showFigures = collector.showFigures();
         //Then
-        Assert.assertEquals(circle.getShapeName() + " " + circle.getField() + "\n" + square.getShapeName() + " " + square.getField() + "\n" + triangle.getShapeName() + " " + triangle.getField()  + "\n", collector.showFigures());
+        Assert.assertEquals(circle.getShapeName() + " " + circle.getField() + "\n" + square.getShapeName() + " " + square.getField() + "\n" + triangle.getShapeName() + " " + triangle.getField()  + "\n", showFigures);
     }
 
 

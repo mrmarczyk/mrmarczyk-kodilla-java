@@ -5,7 +5,7 @@ public class Square implements Shape {
     public final double a;
 
     public Square(double a) {
-        this.a = a;
+       final this.a = a;
     }
 
     @Override
@@ -15,6 +15,6 @@ public class Square implements Shape {
 
     @Override
     public double getField() {
-        return a*a;
+        return a * a;
     }
 }
