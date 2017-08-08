@@ -5,7 +5,7 @@ public class Circle implements Shape {
     private final double radius;
 
     public Circle(double radius) {
-       final this.radius = radius;
+       this.radius = radius;
     }
 
     @Override
@@ -17,4 +17,8 @@ public class Circle implements Shape {
     public double getField() {
         return Math.PI * radius * radius;
     }
-}
+
+    @Override
+    public String toString() {
+        return getShapeName() + " | " + getField();}
+    }

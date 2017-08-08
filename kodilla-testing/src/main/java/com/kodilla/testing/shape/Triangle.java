@@ -6,8 +6,8 @@ public class Triangle implements Shape {
     public final double h;
 
     public Triangle (double a, double h) {
-       final this.a = a;
-       final this.h = h;
+       this.a = a;
+       this.h = h;
     }
 
     @Override
@@ -19,4 +19,8 @@ public class Triangle implements Shape {
     public double getField() {
         return 0.5 * a * h;
     }
+
+    @Override
+    public String toString() {
+        return getShapeName() + " | " + getField();}
 }

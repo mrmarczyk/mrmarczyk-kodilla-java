@@ -1,6 +1,7 @@
 package com.kodilla.testing.shape;
 
 import java.util.ArrayList;
+import java.util.StringJoiner;
 
 public class ShapeCollector {
 
@@ -20,12 +21,23 @@ public class ShapeCollector {
 
     public String showFigures() {
 
-        String result = "";
-        for (Shape shape: collector) {
-            result += (shape.getShapeName() + " " + shape.getField() + "\n").toString();
+        //StringJoiner
+
+
+        //StringBuilder
+
+        StringBuilder sb = new StringBuilder();
+
+        for (Shape shape : collector)
+        {
+            sb.append(shape);
+            sb.append("\t");
         }
 
-        System.out.println(result);
-        return result;
+        System.out.println(sb.toString());
+
+        return sb.toString();
+
+
     }
 }

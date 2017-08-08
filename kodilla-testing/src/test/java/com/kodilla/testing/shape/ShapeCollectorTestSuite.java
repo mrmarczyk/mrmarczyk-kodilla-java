@@ -70,7 +70,7 @@ public class ShapeCollectorTestSuite {
         //When
         String showFigures = collector.showFigures();
         //Then
-        Assert.assertEquals(circle.getShapeName() + " " + circle.getField() + "\n" + square.getShapeName() + " " + square.getField() + "\n" + triangle.getShapeName() + " " + triangle.getField()  + "\n", showFigures);
+        Assert.assertEquals(circle.getShapeName() + " | " + circle.getField() + "\t" + square.getShapeName() + " | " + square.getField() + "\t" + triangle.getShapeName() + " | " + triangle.getField()  + "\t", showFigures);
     }
 
 
