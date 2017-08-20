@@ -23,8 +23,18 @@ public class ShapeCollector {
 
         //StringJoiner
 
+        StringJoiner sj = new StringJoiner("\t");
+        for (Shape shape : collector)
+        {
+            sj.add(shape.toString());
+        }
 
-        //StringBuilder
+        System.out.println(sj.toString());
+
+        return sj.toString();
+
+
+        /*StringBuilder
 
         StringBuilder sb = new StringBuilder();
 
@@ -37,6 +47,7 @@ public class ShapeCollector {
         System.out.println(sb.toString());
 
         return sb.toString();
+        */
 
 
     }
