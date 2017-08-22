@@ -15,22 +15,22 @@ public class ForumStatistics {
         numberOfPosts = statistics.postsCount();
         numberOfComments = statistics.commentsCount();
 
-        if ( numberOfUsers == 0 ) {
+        if ( numberOfUsers == 0 || numberOfPosts == 0 ) {
             averPostsPerUser = 0;
         } else {
-            averPostsPerUser = numberOfPosts / numberOfUsers;
+            averPostsPerUser = (double) numberOfPosts / (double) numberOfUsers;
         }
 
-        if ( numberOfUsers == 0 ) {
+        if ( numberOfUsers == 0 | numberOfComments == 0 ) {
             averCommentsPerUser = 0;
         } else {
-            averCommentsPerUser = numberOfComments / numberOfUsers;
+            averCommentsPerUser = (double) numberOfComments / (double) numberOfUsers;
         }
 
-        if ( numberOfPosts == 0 ) {
+        if ( numberOfPosts == 0 || numberOfComments == 0 ) {
             averCommentsPerPost = 0;
         } else {
-            averCommentsPerPost = numberOfComments / numberOfPosts;
+            averCommentsPerPost = (double) numberOfComments / (double) numberOfPosts;
         }
 
     }
