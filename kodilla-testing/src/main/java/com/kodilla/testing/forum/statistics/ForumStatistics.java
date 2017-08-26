@@ -9,30 +9,29 @@ public class ForumStatistics {
     private double averCommentsPerUser;
     private double averCommentsPerPost;
 
-    public void calculateAdvStatistics(Statistics statistics) {
-
+    void storeBasicStats(Statistics statistics) {
         numberOfUsers = statistics.usersNames().size();
         numberOfPosts = statistics.postsCount();
         numberOfComments = statistics.commentsCount();
+    }
 
-        if ( numberOfUsers == 0 || numberOfPosts == 0 ) {
+    void calculateAverPostsPerUser(Statistics statistics) {
+
+        if (numberOfUsers == 0 || numberOfPosts == 0) {
             averPostsPerUser = 0;
-        } else {
-            averPostsPerUser = (double) numberOfPosts / (double) numberOfUsers;
-        }
+        } else averPostsPerUser = (double) numberOfPosts / (double) numberOfUsers;
+    }
 
-        if ( numberOfUsers == 0 | numberOfComments == 0 ) {
+    void calculateAverCommentsPerUser(Statistics statistics) {
+        if (numberOfUsers == 0 | numberOfComments == 0) {
             averCommentsPerUser = 0;
-        } else {
-            averCommentsPerUser = (double) numberOfComments / (double) numberOfUsers;
-        }
+        } else averCommentsPerUser = (double) numberOfComments / (double) numberOfUsers;
+    }
 
-        if ( numberOfPosts == 0 || numberOfComments == 0 ) {
+    void calculateAverCommentsPerPost(Statistics statistics) {
+        if (numberOfPosts == 0 || numberOfComments == 0) {
             averCommentsPerPost = 0;
-        } else {
-            averCommentsPerPost = (double) numberOfComments / (double) numberOfPosts;
-        }
-
+        } else averCommentsPerPost = (double) numberOfComments / (double) numberOfPosts;
     }
 
     public void showStatistics () {
