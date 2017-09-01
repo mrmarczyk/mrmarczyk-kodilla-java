@@ -35,6 +35,5 @@ public class StreamMain {
         poemBeautifier.beautify("string", (string) -> "*** " + string + " ***");
         poemBeautifier.beautify("string", (string) -> string.replace("r",""));
 
-
     }
 }
