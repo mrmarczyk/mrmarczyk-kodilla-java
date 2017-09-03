@@ -5,9 +5,11 @@ import com.kodilla.stream.book.BookDirectory;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
 
 // import com.kodilla.stream.beautifier.PoemBeautifier;
 
@@ -27,7 +29,7 @@ public class StreamMain {
 
         Map<Integer, ForumUser> theResultlistOfForumUsers = theForum.getTheUserList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> forumUser.getBirthdate().getYear() <= 1997)
+                .filter(forumUser -> (LocalDate.now().minusYears(20).isAfter(forumUser.getBirthdate())))
                 .filter(forumUser -> forumUser.getPostsPublished() > 0)
                 .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
