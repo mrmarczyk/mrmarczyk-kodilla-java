@@ -3,8 +3,6 @@ package com.kodilla.stream.array;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.OptionalDouble;
-
 import static com.kodilla.stream.array.ArrayOperations.getAverage;
 
 public class ArrayOperationsTestSuite {
