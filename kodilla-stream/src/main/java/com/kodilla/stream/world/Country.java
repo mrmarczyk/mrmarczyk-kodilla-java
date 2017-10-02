@@ -5,15 +5,15 @@ import java.math.BigDecimal;
 public class Country {
 
     private final String countryName;
-    private final BigDecimal peopleQuantity;
+    private final BigDecimal localPeopleQuantity;
 
-    public Country(String countryName, BigDecimal peopleQuantity) {
+    public Country(String countryName, BigDecimal localPeopleQuantity) {
         this.countryName = countryName;
-        this.peopleQuantity = peopleQuantity;
+        this.localPeopleQuantity = localPeopleQuantity;
     }
 
-    public BigDecimal getPeopleQuantity() {
-        return peopleQuantity;
+    public BigDecimal getLocalPeopleQuantity() {
+        return localPeopleQuantity;
     }
 
     @Override
@@ -24,13 +24,13 @@ public class Country {
         Country country = (Country) o;
 
         if (countryName != null ? !countryName.equals(country.countryName) : country.countryName != null) return false;
-        return peopleQuantity != null ? peopleQuantity.equals(country.peopleQuantity) : country.peopleQuantity == null;
+        return localPeopleQuantity != null ? localPeopleQuantity.equals(country.localPeopleQuantity) : country.localPeopleQuantity == null;
     }
 
     @Override
     public int hashCode() {
         int result = countryName != null ? countryName.hashCode() : 0;
-        result = 31 * result + (peopleQuantity != null ? peopleQuantity.hashCode() : 0);
+        result = 31 * result + (localPeopleQuantity != null ? localPeopleQuantity.hashCode() : 0);
         return result;
     }
 }
