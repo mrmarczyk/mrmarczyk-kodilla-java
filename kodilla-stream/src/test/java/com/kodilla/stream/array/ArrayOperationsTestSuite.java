@@ -8,18 +8,12 @@ import static com.kodilla.stream.array.ArrayOperations.getAverage;
 public class ArrayOperationsTestSuite {
 
     @Test
-
     public void testGetAverage() {
-
         //given
         int[] numbers = {1,2,3,4,5,6,7,8,9,10};
-
         //when
         double testedAverage = getAverage(numbers);
-
         //then
-        Assert.assertEquals(5.5, testedAverage, 0.1);
-
-
+        Assert.assertEquals(5.5, testedAverage,0.0001);
     }
 }

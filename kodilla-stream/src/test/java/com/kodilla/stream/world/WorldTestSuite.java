@@ -14,10 +14,8 @@ public class WorldTestSuite {
         Country country1 = new Country("Polska", new BigDecimal(37000000));
         Continent continent1 = new Continent("Europa", Collections.singleton(country1));
         World world = new World(Collections.singletonList(continent1));
-
         //when
         BigDecimal totalQuantity = world.getPeopleQuantity();
-
         //then
         BigDecimal expectedQuantity = new BigDecimal("37000000");
         Assert.assertEquals(expectedQuantity, totalQuantity);
