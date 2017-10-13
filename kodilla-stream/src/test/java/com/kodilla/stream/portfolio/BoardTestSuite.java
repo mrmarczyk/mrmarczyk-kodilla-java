@@ -174,7 +174,7 @@ public class BoardTestSuite {
                 .flatMap(tl -> tl.getTasks().stream())
                 .mapToLong(t -> DAYS.between(t.getCreated(), LocalDate.now()))
                 .sum();
-        double averageWorkingDays = workingDaysSum / (double) taskCount;
+        double averageWorkingDays = (double) workingDaysSum / taskCount;
 
         //Then
         Assert.assertEquals(10 , averageWorkingDays, 0.0001);
