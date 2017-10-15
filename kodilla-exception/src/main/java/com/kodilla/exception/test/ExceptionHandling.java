@@ -9,6 +9,8 @@ public class ExceptionHandling {
             newChellange.probablyIWillThrowException(1 ,1);
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            System.out.print("End of Second Challenge");
         }
 
     }
