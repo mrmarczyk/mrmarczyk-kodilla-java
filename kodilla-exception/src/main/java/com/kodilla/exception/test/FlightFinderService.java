@@ -16,9 +16,12 @@ public class FlightFinderService {
 
     public boolean findFlight (Flight flight) throws RouteNotFoundException {
 
-        if (airportMap.get(flight.getArrivalAirport()) != null) {
-            return airportMap.get(flight.getArrivalAirport());
+        String airportName = flight.getArrivalAirport();
+        Boolean x = airportMap.get(flight.getArrivalAirport());
+
+        if (x != null) {
+            return x;
         }
-        throw new RouteNotFoundException("Lotnisko " + flight.getArrivalAirport() + " nie znajduje się na liście połączeń.");
+        throw new RouteNotFoundException("Lotnisko " + airportName + " nie znajduje się na liście połączeń.");
     }
 }
