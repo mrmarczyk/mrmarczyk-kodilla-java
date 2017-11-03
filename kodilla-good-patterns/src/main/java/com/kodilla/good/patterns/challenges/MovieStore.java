@@ -1,9 +1,6 @@
 package com.kodilla.good.patterns.challenges;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 class MovieStore {
 
@@ -19,7 +16,7 @@ class MovieStore {
 
     public Map<String, List<String>> getMovies() {
 
-        return moviesTitlesWithTranslations;
+        return Collections.unmodifiableMap(moviesTitlesWithTranslations);
     }
 }
 

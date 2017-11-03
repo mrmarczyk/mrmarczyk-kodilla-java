@@ -11,7 +11,7 @@ public class MovieStoreRunner {
         String movieList = fullListOfFilms.getMovies()
                             .entrySet()
                             .stream()
-                            .flatMap(book -> book.getValue().stream())
+                            .flatMap(movie -> movie.getValue().stream())
                             .collect(Collectors.joining("!"));
 
         System.out.println(movieList);
