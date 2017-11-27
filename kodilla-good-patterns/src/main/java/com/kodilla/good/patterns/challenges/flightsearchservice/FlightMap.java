@@ -1,28 +1,30 @@
 package com.kodilla.good.patterns.challenges.flightsearchservice;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FlightMap {
 
-    Map<Integer, Flight> flightMap = new HashMap<>();
+    Map<Airport, List<Flight>> departureToFlight = new HashMap<>();
 
-    public Map<Integer, Flight> getFlightMap() {
-        return flightMap;
-    }
+    Map<Airport, List<Flight>> arricalToFlight = new HashMap<>();
 
     public void addFlight(Flight flight) {
-        flightMap.put(flight.getFlightNo(), flight);
+        departureToFlight.putIfAbsent(flight.getDepartureAiport(), new ArrayList<>());
+        departureToFlight.get(flight.getDepartureAiport()).add(flight);
+
+        arricalToFlight.putIfAbsent(flight.getArrivalAirport(), new ArrayList<>());
+        arricalToFlight.get(flight.getArrivalAirport()).add(flight);
     }
 
-    public void removeFlight(Flight flight) {
-        flightMap.remove(flight.getFlightNo());
+    public List <Flight> getFlightsFrom(Airport airport) {
+        return departureToFlight.get(airport);
     }
 
-    @Override
-    public String toString() {
-        return "FlightMap{" +
-                "flightMap=" + flightMap +
-                '}';
+    public List <Flight> getFlightsTo(Airport airport) {
+        return arricalToFlight.get(airport);
     }
+
 }
