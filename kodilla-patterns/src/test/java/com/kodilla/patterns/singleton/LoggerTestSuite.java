@@ -5,12 +5,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class LoggerTestSuite {
-    private static Logger logger;
 
     @BeforeClass
     public static void logToLog() {
-        logger = new Logger();
-        logger.log("my last log");
+        Logger.getInstance().log("my last log");
     }
 
     @Test
@@ -18,7 +16,7 @@ public class LoggerTestSuite {
         //Given
 
         //When
-        String lastLog = logger.getLastLog();
+        String lastLog = Logger.getInstance().getLastLog();
         //Then
         Assert.assertEquals("my last log", lastLog);
     }
