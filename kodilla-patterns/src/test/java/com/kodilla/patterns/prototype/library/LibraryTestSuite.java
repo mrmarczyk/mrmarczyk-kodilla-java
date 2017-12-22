@@ -53,10 +53,10 @@ public class LibraryTestSuite {
             System.out.println(e);
         }
         //when
-        deepClonedLibrary.getBooks().add(new Book("Title11", "Author11", LocalDate.of(1977,1,1)));
+        deepClonedLibrary.getBooks().remove(new Book("Title1", "Author1", LocalDate.of(1977,1,1)));
         System.out.println(deepClonedLibrary);
         //then
         Assert.assertEquals(10, library.getBooks().size());
-        Assert.assertEquals(11, deepClonedLibrary.getBooks().size());
+        Assert.assertEquals(9, deepClonedLibrary.getBooks().size());
     }
 }
