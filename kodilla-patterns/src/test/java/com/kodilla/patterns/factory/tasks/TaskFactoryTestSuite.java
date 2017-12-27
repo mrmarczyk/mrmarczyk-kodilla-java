@@ -33,4 +33,16 @@ public class TaskFactoryTestSuite {
         //Then
         Assert.assertEquals("TaskThree", drivingTask.getTaskName());
     }
+
+    /*
+    @Test
+    public void testFactoryDefault() {
+        //Given
+        TaskFactory factory = new TaskFactory();
+        //When
+        Task  = factory.makeTask(TaskFactory.default);
+        //Then
+        Assert.assertEquals("TaskThree", writingTask.getTaskName());
+
+    } */
 }

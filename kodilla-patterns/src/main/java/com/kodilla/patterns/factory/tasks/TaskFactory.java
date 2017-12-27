@@ -14,7 +14,7 @@ public final class TaskFactory {
             case DRIVING_TASK:
                 return new DrivingTask("TaskThree", "Tesco", "Longboard");
             default:
-                return null;
+                throw new IllegalStateException("Type of task should be SHOPPING_TASK, PAINTING_TASK, DRIVING_TASK");
         }
     }
 }
